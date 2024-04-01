@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>James Leighton</title><link href="https://semaj.omg.lol/" rel="alternate"></link><link href="https://semaj.omg.lol/atom.xml" rel="self"></link><id>https://semaj.omg.lol/</id><updated>2024-03-31T14:59:00+01:00</updated><entry><title>What I'm Up To - Week 13 of 2024</title><link href="https://semaj.omg.lol/2024/03/what-im-up-to-week-13-of-2024/" rel="alternate"></link><published>2024-03-31T14:59:00+01:00</published><updated>2024-03-31T14:59:00+01:00</updated><author><name>jamesleighton</name></author><id>tag:semaj.omg.lol,2024-03-31:/2024/03/what-im-up-to-week-13-of-2024/</id><summary type="html">&lt;p&gt;This post is a permanent archive of the updates found on &lt;a href="http://semaj.omg.lol/now"&gt;semaj.omg.lol/now&lt;/a&gt;. A Now Page is a quick way of sharing things I've been up to without having to dedicate time to a fully fleshed out post.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>James Leighton</title><link href="https://semaj.omg.lol/" rel="alternate"></link><link href="https://semaj.omg.lol/atom.xml" rel="self"></link><id>https://semaj.omg.lol/</id><updated>2024-03-31T14:59:00+01:00</updated><entry><title>Now - Week 13 of 2024</title><link href="https://semaj.omg.lol/now/2024/w13/index.html" rel="alternate"></link><published>2024-03-31T14:59:00+01:00</published><updated>2024-03-31T14:59:00+01:00</updated><author><name>jamesleighton</name></author><id>tag:semaj.omg.lol,2024-03-31:/now/2024/w13/index.html</id><summary type="html">&lt;p&gt;This post is a permanent archive of the updates found on &lt;a href="http://semaj.omg.lol/now"&gt;semaj.omg.lol/now&lt;/a&gt;. A Now Page is a quick way of sharing things I've been up to without having to dedicate time to a fully fleshed out post.&lt;/p&gt;
 &lt;p&gt;Some of these things might turn into posts at a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post is a permanent archive of the updates found on &lt;a href="http://semaj.omg.lol/now"&gt;semaj.omg.lol/now&lt;/a&gt;. A Now Page is a quick way of sharing things I've been up to without having to dedicate time to a fully fleshed out post.&lt;/p&gt;
 &lt;p&gt;Some of these things might turn into posts at a later date, but this is mostly for my benefit when I look back 👀 &lt;/p&gt;
 &lt;p&gt;Reply on Mastodon using the link below to add a comment.&lt;/p&gt;
@@ -15,7 +15,16 @@
 &lt;ul&gt;
 &lt;li&gt;Dragon Quest Builders&lt;/li&gt;
 &lt;li&gt;Piczle Cross: Story of Seasons&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Now Archive"></category></entry><entry><title>Kinver Edge and the Rock Houses</title><link href="https://semaj.omg.lol/2024/03/kinver-edge-and-the-rock-houses/" rel="alternate"></link><published>2024-03-09T18:13:00+00:00</published><updated>2024-03-09T18:13:00+00:00</updated><author><name>jamesleighton</name></author><id>tag:semaj.omg.lol,2024-03-09:/2024/03/kinver-edge-and-the-rock-houses/</id><summary type="html">&lt;!-- wp:paragraph --&gt;
+&lt;/ul&gt;
+&lt;p _="%" endif&gt;{% if article.series %}
+    &lt;p&gt;This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:&lt;/p&gt;
+    &lt;ol class="parts"&gt;
+        {% for part_article in article.series.all %}
+            &lt;li {% if part_article == article %}class="active"{% endif %}&gt;
+                &lt;a href='/{{ part_article.url }}'&gt;{{ part_article.title }}&lt;/a&gt;
+            &lt;/li&gt;
+        {% endfor %}
+    &lt;/ol&gt;&lt;/p&gt;</content><category term="Now Archive"></category></entry><entry><title>Kinver Edge and the Rock Houses</title><link href="https://semaj.omg.lol/2024/03/kinver-edge-and-the-rock-houses/" rel="alternate"></link><published>2024-03-09T18:13:00+00:00</published><updated>2024-03-09T18:13:00+00:00</updated><author><name>jamesleighton</name></author><id>tag:semaj.omg.lol,2024-03-09:/2024/03/kinver-edge-and-the-rock-houses/</id><summary type="html">&lt;!-- wp:paragraph --&gt;
 
 &lt;p&gt;Continuing to make an effort to get out and explore more we visited &lt;a href="https://www.nationaltrust.org.uk/visit/shropshire-staffordshire/kinver-edge-and-the-rock-houses"&gt;Kinver Edge and the Kinver Rock Houses&lt;/a&gt; near to Stourbridge, West Midlands.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
