@@ -14,16 +14,7 @@
 &lt;ul&gt;
 &lt;li&gt;Dragon Quest Builders&lt;/li&gt;
 &lt;li&gt;Piczle Cross: Story of Seasons&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p _="%" endif&gt;{% if article.series %}
-    &lt;p&gt;This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:&lt;/p&gt;
-    &lt;ol class="parts"&gt;
-        {% for part_article in article.series.all %}
-            &lt;li {% if part_article == article %}class="active"{% endif %}&gt;
-                &lt;a href='/{{ part_article.url }}'&gt;{{ part_article.title }}&lt;/a&gt;
-            &lt;/li&gt;
-        {% endfor %}
-    &lt;/ol&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Sun, 31 Mar 2024 14:59:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2024-03-31:/now/2024/w13/index.html</guid><category>Now Archive</category></item><item><title>Kinver Edge and the Rock Houses</title><link>https://semaj.omg.lol/2024/03/kinver-edge-and-the-rock-houses/</link><description>&lt;!-- wp:paragraph --&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Sun, 31 Mar 2024 14:59:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2024-03-31:/now/2024/w13/index.html</guid><category>Now Archive</category></item><item><title>Kinver Edge and the Rock Houses</title><link>https://semaj.omg.lol/2024/03/kinver-edge-and-the-rock-houses/</link><description>&lt;!-- wp:paragraph --&gt;
 
 &lt;p&gt;Continuing to make an effort to get out and explore more we visited &lt;a href="https://www.nationaltrust.org.uk/visit/shropshire-staffordshire/kinver-edge-and-the-rock-houses"&gt;Kinver Edge and the Kinver Rock Houses&lt;/a&gt; near to Stourbridge, West Midlands.&lt;/p&gt;
 &lt;!-- /wp:paragraph --&gt;
