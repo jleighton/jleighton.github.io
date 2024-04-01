@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>James Leighton</title><link>https://semaj.omg.lol/</link><description></description><lastBuildDate>Sun, 31 Mar 2024 14:59:00 +0100</lastBuildDate><item><title>What I'm Up To - Week 13 of 2024</title><link>https://semaj.omg.lol/2024/03/what-im-up-to-week-13-of-2024/</link><description>&lt;p&gt;This post is a permanent archive of the updates found on &lt;a href="http://semaj.omg.lol/now"&gt;semaj.omg.lol/now&lt;/a&gt;. A Now Page is a quick way of sharing things I've been up to without having to dedicate time to a fully fleshed out post.&lt;/p&gt;
-&lt;p&gt;Some of these things might turn into posts at a later date, but this is mostly for my benefit when I look back 👀&lt;/p&gt;
+&lt;p&gt;Some of these things might turn into posts at a later date, but this is mostly for my benefit when I look back 👀 &lt;/p&gt;
+&lt;p&gt;Reply on Mastodon using the link below to add a comment.&lt;/p&gt;
 &lt;h3&gt;What I’m reading 📖&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://amzn.eu/d/eFkFAWg"&gt;This Book May Save Your Life: Everyday Health Hacks to Worry Less and Live Better&lt;/a&gt; by Dr Karan Rajan&lt;/li&gt;
@@ -1104,22 +1105,7 @@ head -n 10 *.md &amp;gt; front.txt&lt;br&gt;
 - OG Graph tags for prettier sharing on Twitter and Facebook&lt;br&gt;
 - A scrollable version of my travel map&lt;br&gt;
 - Fix /archives/ - this is currently rendering particularly badly!&lt;/p&gt;
-&lt;p&gt;I am super happy with the results, and now it's just the SUPER FUN task of migrating over one hundred more posts as I get the time.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Sat, 22 Sep 2018 22:58:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2018-09-22:/2018/09/my-new-jekyll-powered-blog/</guid><category>projects</category></item><item><title>An update to how I use Exist.io (Android Edition)</title><link>https://semaj.omg.lol/2018/09/an-update-to-how-i-use-exist-io-android-edition-2/</link><description>&lt;p&gt;Twelve months ago I wrote a blog post that explained how I used [Exist.io](https://exist.io/?referred_by=jamesleighton) with all the various services and hardware that I owned. That was iPhone centric, but I now use a Galaxy Note 8 so there has been some fairly major changes to my workflow. Read on…!&lt;/p&gt;
-&lt;p&gt;![Exist Logo](/images/2024/02/4f68b-1ba779b4df.png){:class="img-fluid"}&lt;/p&gt;
-&lt;p&gt;The biggest change was obviously changing from iOS to Android. The Exist app on android is just as great as the iPhone version so this was no big deal. The big deal is in Android wearables. Android Wear is dire. I bought a Huawei Sport 2, and fairly rapidly replaced it with a Fitbit Charge 2.&lt;/p&gt;
-&lt;p&gt;Sleep tracking on the Huawei was terrible, Google Fit is a special piece of rubbish, and nothing ever synced properly as the watch tried it’s best to push me into their own Huawei Health system. No thanks.&lt;/p&gt;
-&lt;p&gt;I eventually decided to try Fitbit. Their app is great, the tracker is fantastic (maybe another post on that some other time) and it just works all the time.&lt;/p&gt;
-&lt;p&gt;I wear it 24/7 except for swimming (battery life is 4–5 days) and it feeds the following data into Exist. The fact it works all day and all night means that Exist gets quite a lot of tasty data to analyse.&lt;/p&gt;
-&lt;p&gt;- Time Asleep&lt;br&gt;
-- Time in Bed&lt;br&gt;
-- Steps&lt;br&gt;
-- Continuous Heart Rate&lt;br&gt;
-- Workouts Logged&lt;/p&gt;
-&lt;p&gt;Recently, I started swimming at my local pool and was wondering how I would log this into Fitbit (without buying a new swim-proof fitbit…). Turns out the pool uses a service called [Swimtag](http://www.seeyourswim.com/). You make an account with them, check out a wristband and go swimming.&lt;/p&gt;
-&lt;p&gt;When you return the band, your swim data is analysed and uploads to your account. This gives you lots of interesting stats, but most importantly it can post your swims into Fitbit. Perfect! It even supports challenges, but sadly doesn’t have badges…&lt;/p&gt;
-&lt;p&gt;I also started dabbling with meditation at the end of the day to help me wind down for sleep. Exist can store ‘time meditating’ but only reads this from Google Fit. Hmm… I found an app for this, ‘[Meditation Timer &amp;amp; Log](https://play.google.com/store/apps/details?id=com.telesoftas.meditationtimer)’ which is available free from Google Play. Just go into settings and connect Google Fit.&lt;/p&gt;
-&lt;p&gt;A few things I want to do in the future is looking at building my own integrations for Untapped (to record beers in Exist) and Monzo (to log daily spending). I think both of these data points would be interesting and could have some curious correlations to sleep, mood and others. These are on my list of things to do when I eventually get around to delving back into Python coding.&lt;/p&gt;
-&lt;p&gt;If you want to try [Exist](https://exist.io/?referred_by=jamesleighton), please use [my link](https://exist.io/?referred_by=jamesleighton) to get two months free (and $2 off my next bill!)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Wed, 12 Sep 2018 19:30:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2018-09-12:/2018/09/an-update-to-how-i-use-exist-io-android-edition-2/</guid><category>exist.io, health</category></item><item><title>An update to how I use Exist.io (Android Edition)</title><link>https://semaj.omg.lol/2018/09/an-update-to-how-i-use-exist-io-android-edition/</link><description>&lt;p&gt;Twelve months ago I wrote a&lt;a href="https://medium.com/geekyjames/life-tracking-with-exist-8b3339c548c7" class="markup--anchor markup--p-anchor" target="_blank" rel="noopener"&gt; blog post&lt;/a&gt; that explained how I used &lt;a href="https://exist.io/?referred_by=jamesleighton" class="markup--anchor markup--p-anchor" target="_blank" rel="nofollow noopener"&gt;Exist.io&lt;/a&gt; with all the various services and hardware that I owned. That was iPhone centric, but I now use a Galaxy Note 8 so there has been some fairly major changes to my workflow. Read on…!&lt;/p&gt;
+&lt;p&gt;I am super happy with the results, and now it's just the SUPER FUN task of migrating over one hundred more posts as I get the time.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Sat, 22 Sep 2018 22:58:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2018-09-22:/2018/09/my-new-jekyll-powered-blog/</guid><category>projects</category></item><item><title>An update to how I use Exist.io (Android Edition)</title><link>https://semaj.omg.lol/2018/09/an-update-to-how-i-use-exist-io-android-edition/</link><description>&lt;p&gt;Twelve months ago I wrote a&lt;a href="https://medium.com/geekyjames/life-tracking-with-exist-8b3339c548c7" class="markup--anchor markup--p-anchor" target="_blank" rel="noopener"&gt; blog post&lt;/a&gt; that explained how I used &lt;a href="https://exist.io/?referred_by=jamesleighton" class="markup--anchor markup--p-anchor" target="_blank" rel="nofollow noopener"&gt;Exist.io&lt;/a&gt; with all the various services and hardware that I owned. That was iPhone centric, but I now use a Galaxy Note 8 so there has been some fairly major changes to my workflow. Read on…!&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="/images/2018/09/50309-1yconuowomqi38wirfgylnw.png" class="progressiveMedia-image js-progressiveMedia-image" alt="Exist.io" /&gt;
 &lt;figcaption aria-hidden="true"&gt;&lt;a href="https://exist.io/?referred_by=jamesleighton" class="markup--anchor markup--figure-anchor" target="_blank" rel="nofollow noopener"&gt;Exist.io&lt;/a&gt;&lt;/figcaption&gt;
@@ -2154,4 +2140,34 @@ string=&amp;quot;SSH Login from $IP for $name&amp;quot;
 &lt;h3&gt;Attack of the Friday Monsters&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="Attack of the Friday Monsters" src="/images/attack_of_the_friday_monsters.png"&gt;&lt;/p&gt;
 &lt;p&gt;Longer than Liberation Maiden, I also rather enjoyed &lt;a href="http://www.metacritic.com/game/3ds/attack-of-the-friday-monsters!-a-tokyo-tale"&gt;Attack of the Friday Monsters&lt;/a&gt; but I feel that the ending was a bit rushed. The game plays like a visual novel (Think sort of Monkey Island) where you go around talking to various characters, looking for clues, and playing a card game to battle NPCs. The battle system was simple and worked, but probably could of been fleshed out a bit. The story was satsifying (I think, I am still going through it in my mind...) and I'd look forward to a sequel if one were to be announced.&lt;/p&gt;
-&lt;p&gt;On to the next games!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Thu, 10 Apr 2014 18:01:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2014-04-10:/2014/04/two-more-completed-games/</guid><category>gaming</category><category>3ds</category><category>backlog</category></item></channel></rss>
+&lt;p&gt;On to the next games!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Thu, 10 Apr 2014 18:01:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2014-04-10:/2014/04/two-more-completed-games/</guid><category>gaming</category><category>3ds</category><category>backlog</category></item><item><title>Completing the backlog: Fun! Fun! Minigolf! Touch!</title><link>https://semaj.omg.lol/2014/04/completing-the-backlog-fun-fun-minigolf-touch/</link><description>&lt;p&gt;This week I completed (unlocked everything I could) &lt;a href="http://www.metacritic.com/game/3ds/fun!-fun!-minigolf-touch!"&gt;Fun! Fun! Minigolf Touch!&lt;/a&gt; for the 3DS. I bought it back in 2012 from the eShop because mini golf is awesome. And then I hardly played it. Maybe it's because games with 'Fun! Fun!' in the title usually aren't actually that fun? Maybe, I thought that this game was alright. Some courses were ridiculously easy, whilst others were randomly very hard.&lt;/p&gt;
+&lt;p&gt;
+
+&lt;figure&gt;
+&lt;img src="/images/2016/11/ctbl-funfunminigolf.jpg" class="alignnone size-full wp-image-491" width="800" height="456" alt="Fun! Fun! Minigolf Touch logo" /&gt;
+&lt;figcaption aria-hidden="true"&gt;Fun! Fun! Minigolf Touch logo&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/p&gt;
+
+&lt;p&gt;The normal mode was a blast once I got back into it, trickshot mode on the other hand wasn't brilliant. The requirement to get the ball into a 'safe zone' within one shot did get a bit annoying on the more complicated levels as it required absolute precision in aiming each shot. Additonally, some of the more 'complex' levels were just the same courses with extra boxes and such in the way. There could of been way more imagination used between the European, Asian, and American Cups. I'm thinking hamburgers, great walls, and Eifel Towers if you get what I mean!&lt;/p&gt;
+&lt;p&gt;Overall my 3DS Activity Log showed that I'd played the game in it's entirety for about three hours. I probably should of gotten around to finishing this years ago.&lt;/p&gt;
+&lt;p&gt;On to the next game! Maybe Phoenix Wright Dual Destiny's or another 3DS download title. In fact I've organised a folder on my 3DS which contains the games I want to finish this year:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mario vs Donkey [5:00]&lt;/li&gt;
+&lt;li&gt;Crimson Shroud [7:00]&lt;/li&gt;
+&lt;li&gt;Professor Layton: Miracle Mask [16:00]&lt;/li&gt;
+&lt;li&gt;Picross E [11:00]&lt;/li&gt;
+&lt;li&gt;Zenonia [17:00]&lt;/li&gt;
+&lt;li&gt;Phoenix Wright: Dual Destinies [30:00]&lt;/li&gt;
+&lt;li&gt;Legend of Zelda [10:00]&lt;/li&gt;
+&lt;li&gt;Legend of Zelda: Links' Awakening [16:00]&lt;/li&gt;
+&lt;li&gt;Legend of Zelda: Minish Cap [16:00]&lt;/li&gt;
+&lt;li&gt;Weapon Shop de Omasse [9:00]&lt;/li&gt;
+&lt;li&gt;Monster Hunter 3 [80:00+ Lol. Yeah.]&lt;/li&gt;
+&lt;li&gt;Pullblox/Pushmo [15:00]&lt;/li&gt;
+&lt;li&gt;&lt;span style="text-decoration:line-through;"&gt;&lt;a href="http://www.jamesleighton.com/2014/04/two-more-completed-games.html"&gt;Attack of the Friday Monsters&lt;/a&gt;&lt;/span&gt; [3:00]&lt;/li&gt;
+&lt;li&gt;&lt;span style="text-decoration:line-through;"&gt;&lt;a href="http://www.jamesleighton.com/2014/04/two-more-completed-games.html"&gt;Liberation Maiden&lt;/a&gt;&lt;/span&gt; [2:00]&lt;/li&gt;
+&lt;li&gt;Mario Kart Super Circuit [8:00]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of these, quite a few are shorter then five hours (however 'how long to beat' timings for puzzle games can be a bit off sometimes...) so I think I'm going to focus on the shorter games for the next few weeks...&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">jamesleighton</dc:creator><pubDate>Wed, 09 Apr 2014 17:04:00 +0100</pubDate><guid isPermaLink="false">tag:semaj.omg.lol,2014-04-09:/2014/04/completing-the-backlog-fun-fun-minigolf-touch/</guid><category>games</category><category>3ds</category><category>backlog</category><category>gaming</category></item></channel></rss>
