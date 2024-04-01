@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Todoman Reminder Sync for Fastmail - James Leighton</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://semaj.omg.lol/2020/09/todoman-reminder-sync-for-fastmail/">
+
+        <meta name="author" content="jamesleighton" />
+        <meta name="description" content="How to configure calendar sync on Linux (tested on Ubuntu 20.04) for Fastmail using vdirsync and todoman. This lets me use the same todo list between my linux desktop, and iOS mobile devices (using the built in stock reminders app) ## Vdirsyncer Config I am using [vdirsyncer](https://github.com …" />
+
+        <meta property="og:site_name" content="James Leighton" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Todoman Reminder Sync for Fastmail"/>
+        <meta property="og:url" content="https://semaj.omg.lol/2020/09/todoman-reminder-sync-for-fastmail/"/>
+        <meta property="og:description" content="How to configure calendar sync on Linux (tested on Ubuntu 20.04) for Fastmail using vdirsync and todoman. This lets me use the same todo list between my linux desktop, and iOS mobile devices (using the built in stock reminders app) ## Vdirsyncer Config I am using [vdirsyncer](https://github.com …"/>
+        <meta property="article:published_time" content="2020-09-05" />
+            <meta property="article:section" content="howto" />
+            <meta property="article:author" content="jamesleighton" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://semaj.omg.lol/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="https://semaj.omg.lol/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://semaj.omg.lol/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://semaj.omg.lol/theme/css/style.css" type="text/css"/>
+
+        <link href="https://semaj.omg.lol/atom.xml" type="application/atom+xml" rel="alternate"
+              title="James Leighton ATOM Feed"/>
+    <link href="https://semaj.omg.lol/theme/css/comments.css" rel="stylesheet">
+        <link href="https://semaj.omg.lol/feed/index.xml" type="application/rss+xml" rel="alternate"
+              title="James Leighton RSS Feed"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://semaj.omg.lol/" class="navbar-brand">
+James Leighton            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://semaj.omg.lol/2020/09/todoman-reminder-sync-for-fastmail/"
+                       rel="bookmark"
+                       title="Permalink to Todoman Reminder Sync for Fastmail">
+                        Todoman Reminder Sync for Fastmail
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+       </i><time datetime="2020-09-05T18:00:00+01:00"> Sat 05 September 2020</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="https://semaj.omg.lol/category/howto.html">howto</a>
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>How to configure calendar sync on Linux (tested on Ubuntu 20.04) for Fastmail using vdirsync and todoman.</p>
+<p>This lets me use the same todo list between my linux desktop, and iOS mobile devices (using the built in stock reminders app)</p>
+<p>## Vdirsyncer Config</p>
+<p>I am using [vdirsyncer](https://github.com/pimutils/vdirsyncer) to connect to Fastmail's servers and before the synchronisation.</p>
+<p>```[general]<br>
+status_path = "\~/.vdirsyncer/status/"<br>
+[pair fastmail]<br>
+a = "local"<br>
+b = "cal"<br>
+collections = ["from a", "from b"]<br>
+[storage cal]<br>
+type = "caldav"<br>
+url = "https://caldav.messagingengine.com/"<br>
+username = "username@fastmail.com"<br>
+password = "fastmail-app-specific-password"<br>
+[storage local]<br>
+type = "filesystem"<br>
+path = "\~/.vdirsyncer/fastmail"<br>
+fileext = ".ics"<br>
+```</p>
+<p>## Todoman</p>
+<p>[Todoman](https://github.com/pimutils/todoman) is a terminal reminder/todo app that can work with vdirsyncer.</p>
+<p class="image-caption">![todoman.png](/images/2024/02/d06bc-1f40bb3640.png){:class="img-fluid" :alt="Todoman Output in Terminal"}<br>
+*Todoman Output in Terminal*<br></p>
+<p>Here is my configuration for todoman that points it at the folders created by vdirsyncer.</p>
+<p>```[main]<br>
+# A glob expression which matches all directories relevant<br>
+path = \~/.vdirsyncer/fastmail/path-for-reminders-cal<br>
+date_format = %Y-%m-%d<br>
+time_format = %H:%M<br>
+default_list = reminders-cal-id (same as the folder, see below...)<br>
+default_due = 48<br>
+humanize = true<br>
+```</p>
+<p>To figure out which calendar is the ical reminders feed you can take a look in \~/.vdirsyncer/fastmail. There should be a folder for each of your Fastmail calenders.</p>
+<p>Look through the ICS files that you find and you'll find something similar to the this example. You want to use the directory name of the folder that contains your VTODO's - use the directory name for the default_list above as well.</p>
+<p>```BEGIN:VCALENDAR<br>
+CALSCALE:GREGORIAN<br>
+PRODID:-//Apple Inc.//iOS 13.6.1//EN<br>
+VERSION:2.0<br>
+BEGIN:VTODO<br>
+CLASS:PUBLIC<br>
+COMPLETED:20200825T165931Z<br>
+CREATED:20200825T165843Z<br>
+DTSTAMP:20200825T165931Z<br>
+LAST-MODIFIED:20200825T165931Z<br>
+PERCENT-COMPLETE:100<br>
+STATUS:COMPLETED<br>
+SUMMARY:Test from ios<br>
+UID:d3cc53dabe0fb4280617dd7c349f2705ea72e59f<br>
+END:VTODO<br>
+END:VCALENDAR<br>
+```</p>
+<p>## Calendar Support</p>
+<p>It is possible to using a terminal calendar tool like Calcurse or [Khal](https://github.com/pimutils/khal) but I have not set these up yet.</p>
+<p>## Automating with Cron</p>
+<p>To automate synchronisation, I used cron. Add the following via `crontab -e` to run the sync every 15 minutes.</p>
+<p>```*/15 * * * * /home/james/.local/bin/vdirsyncer sync &gt; /dev/null```</p>
+            </div>
+            <!-- /.entry-content -->
+
+            <!-- No Comments -->
+
+
+
+            
+
+
+
+
+
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/03/what-im-up-to-week-13-of-2024/">What I'm Up To - Week 13 of 2024</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/03/kinver-edge-and-the-rock-houses/">Kinver Edge and the Rock Houses</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/03/thoughts-on-activitypub-and-the-fediverse/">Thoughts on ActivityPub and the Fediverse</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/02/visiting-the-highest-waterfall-in-south-wales/">Visiting the Highest Waterfall in South Wales</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/02/moving-the-blog-again/">Moving the blog again</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://social.lol/@semaj" target="_blank">Mastodon</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://ramblingreaders.org/user/Semaj" target="_blank">BookWyrm</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.exophase.com/user/geekyjames/" target="_blank">Exophase</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://boardgamegeek.com/user/james__" target="_blank"><i class="fa-solid fa-dice"></i> BoardGameGeek </a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2024 James Leighton
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://semaj.omg.lol/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://semaj.omg.lol/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://semaj.omg.lol/theme/js/respond.min.js"></script>
+
+
+
+
+
+<script data-goatcounter="https://semaj.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

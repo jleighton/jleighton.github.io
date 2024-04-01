@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Bootstrap 4 - New Blog Theme - James Leighton</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://semaj.omg.lol/2019/01/bootstrap-4-new-blog-theme/">
+
+        <meta name="author" content="jamesleighton" />
+        <meta name="description" content="I decided last week that I really wanted a card based theme for my blog. After all, [cards are cool](https://www.intercom.com/blog/why-cards-are-the-future-of-the-web/). After spending a few hours messing around with existing themes, and trying to customise them to my vision for what I wanted... someone at …" />
+
+        <meta property="og:site_name" content="James Leighton" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Bootstrap 4 - New Blog Theme"/>
+        <meta property="og:url" content="https://semaj.omg.lol/2019/01/bootstrap-4-new-blog-theme/"/>
+        <meta property="og:description" content="I decided last week that I really wanted a card based theme for my blog. After all, [cards are cool](https://www.intercom.com/blog/why-cards-are-the-future-of-the-web/). After spending a few hours messing around with existing themes, and trying to customise them to my vision for what I wanted... someone at …"/>
+        <meta property="article:published_time" content="2019-01-13" />
+            <meta property="article:section" content="howto, projects" />
+            <meta property="article:author" content="jamesleighton" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://semaj.omg.lol/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="https://semaj.omg.lol/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://semaj.omg.lol/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://semaj.omg.lol/theme/css/style.css" type="text/css"/>
+
+        <link href="https://semaj.omg.lol/atom.xml" type="application/atom+xml" rel="alternate"
+              title="James Leighton ATOM Feed"/>
+    <link href="https://semaj.omg.lol/theme/css/comments.css" rel="stylesheet">
+        <link href="https://semaj.omg.lol/feed/index.xml" type="application/rss+xml" rel="alternate"
+              title="James Leighton RSS Feed"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://semaj.omg.lol/" class="navbar-brand">
+James Leighton            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://semaj.omg.lol/2019/01/bootstrap-4-new-blog-theme/"
+                       rel="bookmark"
+                       title="Permalink to Bootstrap 4 - New Blog Theme">
+                        Bootstrap 4 - New Blog Theme
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+       </i><time datetime="2019-01-13T11:17:00+00:00"> Sun 13 January 2019</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="https://semaj.omg.lol/category/howto-projects.html">howto, projects</a>
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>I decided last week that I really wanted a card based theme for my blog. After all, [cards are cool](https://www.intercom.com/blog/why-cards-are-the-future-of-the-web/).</p>
+<p>After spending a few hours messing around with existing themes, and trying to customise them to my vision for what I wanted... someone at my local hackspace suggested I took a look at Bootstrap when I couldn't get them to generate valid HTML properly. This was cool because I got to learn something new (see [2019 goals](/2018/12/29/2019-goals/)!) but because Bootstrap is modern and responsive and made creating the cards I longed for super duper simple.</p>
+<p>[Bootstrap](https://getbootstrap.com/) is a HTML/CSS/JS framework for building modern websites and applications, and I initially felt like the task was going to be enormous and promptly gave up when I couldn't get anything to work right away. It turned out with not very much effort I was able to make a pretty decent looking blog.</p>
+<p>![Bootstrap 4](/images/2024/02/19941-2cce9a940a.png){:class="img-fluid"}</p>
+<p>The next day I reconsidered my efforts and set about building the blog from the ground up, and then implementing it into my new Jekyll theme after I had something that looked nice. This turned out to be a 'good idea'.</p>
+<p>A few more hours later, I had the framework for how I envisaged the blog to look. We had the cards for blog posts on the home page, no pagination - because pagination annoys me - and a working navigation bar. I just needed to work on the post layout (the page you are reading now) and it turns out someone had done the hard work. I found [this template](https://github.com/blackrockdigital/startbootstrap-blog-post/) blog post available under an MIT licence ready to drop into Jekyll.</p>
+<p>Turning my HTML template into a Jekyll theme was pretty site, and you can see how I did it by looking at the [Github repository](https://github.com/jleighton/jleighton.github.io) for this blog. I am planning to write a long form how-to guide for this but that will take a while. Pretty much you need to do the following:</p>
+<p>* Split the layout into it's most basic form. Header, blog layout, sidebar, navbar, etc etc. Whatever makes the most sense.<br>
+* Add the header code to a file in the ```_includes``` folder, add the navbar code to another file, add the jumbotron code to yet another file, the footer code etc. You get the idea. You basically need to split out the theme so Jekyll knows what to include and where<br>
+* Create layout templates that live in ```_layouts```. These include your post template, the default home page, a blank page that just has the Bootstrap scaffolding (see [Travel Map](/uk-travel-map) page). These layout templates will reference the files in ```_includes```.<br>
+* These templates are reference in your markdown content so Jekyll can render your content how you want it to.</p>
+<p>The idea of having the layout logic separated as much as possible into discrete files is that it makes updating your sidebar or the way you want the post cards to display super easy and less error prone.</p>
+<p>[This post](https://jekyllrb.com/tutorials/convert-site-to-jekyll/) from the official Jekyll site gives a good run down of how this process of theme creation works, and is worth the read. Before you start, I would definitely try to have a full understanding of how Jekyll works under the hood plus a decent working knowledge of HTML &amp; CSS.</p>
+<p>To theme my blog I used [Bootswatch United](https://bootswatch.com/united/) which is a theme for Bootstrap. Long time readers much recognise the colour; my old Pelican blog used the same theme! Using Bootstrap themes is as simple as adding the CSS link to your header. There are loads of different themes available but I just love orange.</p>
+<!-- Optional theme -->
+
+<!-- End Optional theme -->
+
+<p>I am pretty happy with the blog as it stands, but there are always things to improve. I am still looking a decent commenting solution that isn't Disqus and doesn't require my commenters to have Gitub accounts. As always, if you have any suggestions please drop me a tweet! @geekyjames</p>
+<p>### Features</p>
+<p>- Card layouts for all blog posts based from one card template.<br>
+- Easy to generate a page for a specific category or tags.<br>
+- Home page is the about page, rather than the wall of blog posts.<br>
+- Fully responsive for desktop, tablet and mobile<br>
+- Orange!</p>
+<p>![My blog homepage](/images/2024/02/550d7-634ba95de3.png){:class="img-fluid"}</p>
+            </div>
+            <!-- /.entry-content -->
+
+            <!-- No Comments -->
+
+
+
+            
+
+
+
+
+
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/03/what-im-up-to-week-13-of-2024/">What I'm Up To - Week 13 of 2024</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/03/kinver-edge-and-the-rock-houses/">Kinver Edge and the Rock Houses</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/03/thoughts-on-activitypub-and-the-fediverse/">Thoughts on ActivityPub and the Fediverse</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/02/visiting-the-highest-waterfall-in-south-wales/">Visiting the Highest Waterfall in South Wales</a></li>
+    <li class="list-group-item"><a href="https://semaj.omg.lol/2024/02/moving-the-blog-again/">Moving the blog again</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://social.lol/@semaj" target="_blank">Mastodon</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://ramblingreaders.org/user/Semaj" target="_blank">BookWyrm</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.exophase.com/user/geekyjames/" target="_blank">Exophase</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://boardgamegeek.com/user/james__" target="_blank"><i class="fa-solid fa-dice"></i> BoardGameGeek </a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2024 James Leighton
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://semaj.omg.lol/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://semaj.omg.lol/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://semaj.omg.lol/theme/js/respond.min.js"></script>
+
+
+
+
+
+<script data-goatcounter="https://semaj.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
