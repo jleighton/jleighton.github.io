@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Wordpress, Lighttpd and Permalinks - James Leighton</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2012/11/wordpress-lighttpd-and-permalinks/">
+
+        <meta name="author" content="jamesleighton" />
+        <meta name="keywords" content="howto,lighttpd,wordpress" />
+        <meta name="description" content="For a few months I&#39;ve been putting up with no pretty permalinks on my blog. It looked a bit crap, but now I&#39;ve migrated Tupcast and this blog to a wordpress network I thought it was time to sort it out. Turns out getting permalinks functioning with Lighttpd wasn’t …" />
+
+        <meta property="og:site_name" content="James Leighton" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Wordpress, Lighttpd and Permalinks"/>
+        <meta property="og:url" content="/2012/11/wordpress-lighttpd-and-permalinks/"/>
+        <meta property="og:description" content="For a few months I&#39;ve been putting up with no pretty permalinks on my blog. It looked a bit crap, but now I&#39;ve migrated Tupcast and this blog to a wordpress network I thought it was time to sort it out. Turns out getting permalinks functioning with Lighttpd wasn’t …"/>
+        <meta property="article:published_time" content="2012-11-15" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="howto" />
+            <meta property="article:tag" content="lighttpd" />
+            <meta property="article:tag" content="wordpress" />
+            <meta property="article:author" content="jamesleighton" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate"
+              title="James Leighton ATOM Feed"/>
+    <link href="/theme/css/comments.css" rel="stylesheet">
+        <link href="/rss.xml" type="application/rss+xml" rel="alternate"
+              title="James Leighton RSS Feed"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">
+James Leighton            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2012/11/wordpress-lighttpd-and-permalinks/"
+                       rel="bookmark"
+                       title="Permalink to Wordpress, Lighttpd and Permalinks">
+                        Wordpress, Lighttpd and Permalinks
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+       </i><time datetime="2012-11-15T21:44:00+00:00"> Thu 15 November 2012</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="/category/misc.html">misc</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/howto.html">howto</a>
+        /
+	<a href="/tag/lighttpd.html">lighttpd</a>
+        /
+	<a href="/tag/wordpress.html">wordpress</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>For a few months I've been putting up with no pretty permalinks on my blog. It looked a bit crap, but now I've migrated Tupcast and this blog to a <a href="http://codex.wordpress.org/Create_A_Network">wordpress network</a> I thought it was time to sort it out.</p>
+<p>Turns out getting permalinks functioning with Lighttpd wasn’t actually that bad. I ended up with effectively the code found on this <a href="http://server.vijge.net/archive/running-wordpress-with-lighttpd/">blog</a>. He mentions a really good point however, running a php script for every upload isn’t exactly the most efficient especially since I am running on a pretty low spec VPS… I was mainly getting stuck on guides that said to redirect to ‘/wp-content/blogs.php’. This is old and has been replaced in newer versions of Wordpress.</p>
+<p>‘/wp-content/blogs.php’ in these examples should be replaced with ‘wp-includes/ms-files.php’ if you are following these guides.</p>
+<p>The better way is to manually code the ID as shown on the same blog linked. Better for your server, and it probably means pages get loaded faster too. I have had to adjust it slightly to allow for my podcast files to still be accessed directly despite permalinks being setup. If you have any folders that you need, just substitute them in!</p>
+<p>My final code is as follows for tupcast.co.uk (which has a network ID of 2)</p>
+<div class="highlight">
+
+    $HTTP["host"] =~ "tupcast.co.uk" {
+    url.rewrite-once = (<
+     "^/(.*)?/?files/(.*)" => "/wp-content/blogs.dir/2/files/$2",
+     "^/(wp-.*)$" => "$1",
+     "^/favicon.ico$" => "$1",
+     "^/xmlrpc.ico$" => "$1",
+     "^/robots.txt$" => "$1",
+     "^/([_0-9a-zA-Z-]+/)?(.*.php)$" => "$2",
+     "(?.*)$" => "index.php$1",
+     "." => "index.php"
+    )}
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="/2014/04/setting-up-voicemail-to-email/">Setting up voicemail to email</a></li>
+        <li><a href="/2014/01/installing-plex-on-the-nowtv-box/">Installing Plex on the NowTV Box</a></li>
+        <li><a href="/2013/03/using-a-linux-computer-in-university-halls/">Using a Linux computer in University halls</a></li>
+        <li><a href="/2012/07/sending-mail-from-a-printer-scanner-or-app-google-apps-help/">Sending mail from a printer, scanner or app - Google Apps Help</a></li>
+        <li><a href="/2012/03/how-to-get-vodafone-uk-to-unlock-a-contract-3g-ipad/">How to get Vodafone UK to unlock a contract 3G iPad.</a></li>
+    </ul>
+</section>
+
+            <!-- No Comments -->
+
+
+
+            
+
+
+
+
+
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="/2024/03/what-im-up-to-week-13-of-2024/">What I'm Up To - Week 13 of 2024</a></li>
+    <li class="list-group-item"><a href="/2024/03/kinver-edge-and-the-rock-houses/">Kinver Edge and the Rock Houses</a></li>
+    <li class="list-group-item"><a href="/2024/03/thoughts-on-activitypub-and-the-fediverse/">Thoughts on ActivityPub and the Fediverse</a></li>
+    <li class="list-group-item"><a href="/2024/02/visiting-the-highest-waterfall-in-south-wales/">Visiting the Highest Waterfall in South Wales</a></li>
+    <li class="list-group-item"><a href="/2024/02/moving-the-blog-again/">Moving the blog again</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://social.lol/@semaj" target="_blank">Mastodon</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://ramblingreaders.org/user/Semaj" target="_blank">BookWyrm</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.exophase.com/user/geekyjames/" target="_blank">Exophase</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://boardgamegeek.com/user/james__" target="_blank"><i class="fa-solid fa-dice"></i> BoardGameGeek </a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2024 James Leighton
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+
+
+</body>
+</html>

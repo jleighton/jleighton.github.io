@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Pelican Blog Workflow and Blogger Migration Tips - James Leighton</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/2014/04/pelican-blog-workflow-and-blogger-migration-tips/">
+
+        <meta name="author" content="jamesleighton" />
+        <meta name="keywords" content="blog" />
+        <meta name="description" content="I migrated away from Blogger this month to using Pelican Static Site Generator. It&#39;s very different, and the change is quite a bit to get used to. Previously, I&#39;d log into blogger and draft away, add some images and publish. Now I store my raw markdown blog posts in a …" />
+
+        <meta property="og:site_name" content="James Leighton" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Pelican Blog Workflow and Blogger Migration Tips"/>
+        <meta property="og:url" content="/2014/04/pelican-blog-workflow-and-blogger-migration-tips/"/>
+        <meta property="og:description" content="I migrated away from Blogger this month to using Pelican Static Site Generator. It&#39;s very different, and the change is quite a bit to get used to. Previously, I&#39;d log into blogger and draft away, add some images and publish. Now I store my raw markdown blog posts in a …"/>
+        <meta property="article:published_time" content="2014-04-11" />
+            <meta property="article:section" content="linux" />
+            <meta property="article:tag" content="blog" />
+            <meta property="article:author" content="jamesleighton" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate"
+              title="James Leighton ATOM Feed"/>
+    <link href="/theme/css/comments.css" rel="stylesheet">
+        <link href="/rss.xml" type="application/rss+xml" rel="alternate"
+              title="James Leighton RSS Feed"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">
+James Leighton            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/2014/04/pelican-blog-workflow-and-blogger-migration-tips/"
+                       rel="bookmark"
+                       title="Permalink to Pelican Blog Workflow and Blogger Migration Tips">
+                        Pelican Blog Workflow and Blogger Migration Tips
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+       </i><time datetime="2014-04-11T18:59:00+01:00"> Fri 11 April 2014</time>
+    </span>
+
+
+
+        <span class="label label-default">Category</span>
+        <a href="/category/linux.html">linux</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/blog.html">blog</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>I migrated away from Blogger this month to using <a href="http://docs.getpelican.com/en/3.3.0/">Pelican Static Site Generator</a>. It's very different, and the change is quite a bit to get used to. Previously, I'd log into blogger and draft away, add some images and publish.</p>
+<p>Now I store my raw markdown blog posts in a <a href="http://www.bittorrent.com/sync">Bittorrent sync</a> folder that syncs between my desktop, mobile devices, and netbook. From here, I connect to my webserver using SSH and upload the post and all related media. I then run the pelican command which outputs the static site to the webservers htdocs/www folder.</p>
+<p>Pros? Absolutely no server side scripting on the server. No PHP, no CGI, and of course there is no MySQL server anywhere in sight. It's brilliant. This also means I sidestep any problems such as the <a href="http://blog.spiderlabs.com/2014/03/wordpress-xml-rpc-pingback-vulnerability-analysis.html">xmlrpc.php issues</a> that seem to be plauging Wordpress admins everywhere. Pages also load really damn quickly.</p>
+<p>Cons? It's not as simple! That's pretty much the only draw back I can find! This is not a blogging engine for your mother. Someone has made a tutorial for posting and managing their Pelican install via <a href="http://technivore.org/posts/2014/01/03/blogging-with-dropbox-and-pelican.html">Dropbox</a>. I don't use Dropbox myself, but I imagine it would be easy to adapt to <a href="http://www.bittorrent.com/sync">Bittorrent Sync</a> when I'm bored one day.</p>
+<p>Being consistant with images is another potential snag. Due to my permalink structure (more on that in a minute!) I store my image media in a top level folder called 'images' therefore I can reference images using '/images/img_name.png' from any post and have them work. If you didn't do it this way, I imagine it'd just be a nightmare keeping track of post media. If you have questions, feel free to leave a comment below.</p>
+<h2>Blogger Migration Tip</h2>
+<p>When moving away from Blogger it's a good idea to keep your permalinks the same as they were to avoid losing out on search engine hits. To achieve this with Pelican, add the following to your pelicanconf.py file:</p>
+<div class="highlight">
+
+    ARTICLE_URL = "{date:%Y}/{date:%m}/{slug}.html"
+    ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{slug}.html"
+
+</div>
+
+<p>Also, add the following to make yearly and monthly archive pages work:</p>
+<div class="highlight">
+
+    YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+    MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+
+</div>
+
+<p>This will result in blog post URLs that match the Blogger's default URLs. Just make sure when you move everything over that you keep the 'slug' the same as what was stored with Blogger otherwise the resulting URLS won't match.</p>
+<p>As for migrating, I did it all manually. I loaded each post up on blogger, used wget to download the images into the [pelican folder]/content/images folder, and then converted each post into Markdown. There is an RSS feed importer but I couldn't find a way to get my older posts importer so I gave up using the importer and spend several weeks moving my posts over to markdown files for Pelican.</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="/2024/02/moving-the-blog-again/">Moving the blog again</a></li>
+    </ul>
+</section>
+
+            <!-- No Comments -->
+
+
+
+            
+
+
+
+
+
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="/2024/03/what-im-up-to-week-13-of-2024/">What I'm Up To - Week 13 of 2024</a></li>
+    <li class="list-group-item"><a href="/2024/03/kinver-edge-and-the-rock-houses/">Kinver Edge and the Rock Houses</a></li>
+    <li class="list-group-item"><a href="/2024/03/thoughts-on-activitypub-and-the-fediverse/">Thoughts on ActivityPub and the Fediverse</a></li>
+    <li class="list-group-item"><a href="/2024/02/visiting-the-highest-waterfall-in-south-wales/">Visiting the Highest Waterfall in South Wales</a></li>
+    <li class="list-group-item"><a href="/2024/02/moving-the-blog-again/">Moving the blog again</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="https://social.lol/@semaj" target="_blank">Mastodon</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://ramblingreaders.org/user/Semaj" target="_blank">BookWyrm</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.exophase.com/user/geekyjames/" target="_blank">Exophase</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://boardgamegeek.com/user/james__" target="_blank"><i class="fa-solid fa-dice"></i> BoardGameGeek </a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2024 James Leighton
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+
+
+</body>
+</html>
